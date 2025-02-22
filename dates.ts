@@ -9,3 +9,7 @@ export function getSecondsBetweenDates(pastDate: Date, currentDate: Date) {
 export function getHoursBetweenDates(pastDate: Date, currentDate: Date) {
     return Math.abs(currentDate.valueOf() - pastDate.valueOf()) / 36e5;
 }
+
+export function getMilisecondsBetweenDates(pastDate: Date, currentDate: Date) {
+    return currentDate.getTime() - pastDate.getTime();
+}
