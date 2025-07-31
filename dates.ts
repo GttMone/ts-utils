@@ -13,3 +13,18 @@ export function getHoursBetweenDates(pastDate: Date, currentDate: Date) {
 export function getMilisecondsBetweenDates(pastDate: Date, currentDate: Date) {
     return currentDate.getTime() - pastDate.getTime();
 }
+
+export function isValidDate(date: Date | string) {
+    const parsedDate = new Date(date);
+    return parsedDate instanceof Date && !isNaN(parsedDate.valueOf());
+}
+
+export function formatDate(date?: Date | string): string {
+  if (!date) return '-';
+  return new Date(date).toLocaleDateString(undefined, { dateStyle: 'long' });
+}
+
+export function formatDateTime(date?: Date | string): string {
+  if (!date) return '-';
+  return new Date(date).toLocaleString(undefined, { dateStyle: 'long', timeStyle: 'short' });
+}
